@@ -1,0 +1,71 @@
+enum MSG_ITEM_TAG
+{
+	MSG_ITEM_TAG_NULL,
+	
+	MSG_ITEM_TAG_FEC_DESC,
+	MSG_ITEM_TAG_RCV_STAT,
+	MSG_ITEM_TAG_REMOTE_CTL,
+	MSG_ITEM_TAG_AUDIO_DATA,
+	MSG_ITEM_TAG_VIDEO_DATA,
+	
+	MSG_ITEM_TAG_BUTT,
+};
+
+IP UDP RTP desc H264
+20 8   12  
+struct S_PK_DESC
+{
+ u16 crc16;														// 从本字段后到包尾, 计算CRC时, 不足双数, 末尾补字节0
+ 
+ //u8 msgid
+ u16 len = udp报文总长 - sizeof(RTP);	// 从desc开始到包尾
+
+ 
+ // fec
+ // T L
+ u16 FecGrpId;
+ u8 PkIdInFECGrp;
+ u8 OrgPkCount;
+ u8 FecPkCount;
+ u16 FecPkSize;
+ // audio 
+ u16 audiolen;
+ char audiodata[x];
+ // video
+ u16 videolen;
+ char videodata[x];
+ 
+ // 本收端统计
+ //u16 Bw							// 本接收端码率
+ //u8 PkLostRatio		  // 本接收端丢包率
+ //u16 TTL_Org				// 对端ping开始时刻ms
+ //u16 TTL_Hold				// 本端ping响应hold时长ms
+ 
+ // 控制对端
+ // T L
+ u16 SetBw						// 控制对端码率 
+ u8  PkLostRatio;			// 丢包率
+ u8  PkLostBurstLen;	// 最大连续丢包
+ u8	 NewIFrmReq;			// 请求新的IFrm
+ //u8	 FecRatio;			// 请求冗余度
+};
+
+// AV通信控制块
+#define MAX_AV_CTL_T_COUNT 		200 	// 记录周期数
+#define AV_CTL_STAT_T_IN_MS		1000	// 统计周期
+struct AV_CTL
+{
+	// local rcv
+	u16 Bw[MAX_AV_CTL_T_COUNT];							// 本接收端码率
+	u8  PkLostRatio[MAX_AV_CTL_T_COUNT];	  // 本接收端丢包率
+	u16 RTT[MAX_AV_CTL_T_COUNT];
+	
+	// remote ctl
+	u16 BwSet[MAX_AV_CTL_T_COUNT];
+	//u8	NewIFrmReq;
+	
+	// temp
+	u16 TTL_Org;				// 对端ping开始时刻ms
+	u16 TTL_Hold;				// 本端ping响应hold时长ms
+}
+ 

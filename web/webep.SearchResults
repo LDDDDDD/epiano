@@ -1,0 +1,75 @@
+---- Event rcved Matches (1 in 1 files) ----
+ASR_eye.cpp:		sprintf(buf, "\nEvent rcved(In Speed:%.1f, Prs Speed:%.1f, Qued:%d): ", 
+---- update Matches (74 in 3 files) ----
+ASRStatApi.h:	EVENT_TYPE_ASR_UPDATE,		// ASR update
+ASRStatApi.h:// UPDATE接口
+ASRStatApi.h:typedef struct S_ASR_UPDATE
+ASRStatApi.h:} ASR_UPDATE;
+ASRStatApi.h:	struct S_ASR_UPDATE AsrUpdate;
+ASR_eye.cpp:		// 模仿EVENT_TYPE_ASR_INSERT, EVENT_TYPE_ASR_UPDATE
+ASR_eye.cpp:			pEvent->eType = EVENT_TYPE_ASR_UPDATE;
+ASR_eye.cpp:			strcpy(pEvent->u_data.AsrUpdate.SessionId, SessionId);
+ASR_eye.cpp:			pEvent->u_data.AsrUpdate.ASRE2EDurationInMs = 200 + (random()%100);
+ASR_eye.cpp:		// 模仿EVENT_TYPE_ASR_INSERT, EVENT_TYPE_ASR_UPDATE
+ASR_eye.cpp:	// update
+ASR_eye.cpp:		string sql = "update t1 set name = 'java33' where id = 2;";
+ASR_eye.cpp:	case EVENT_TYPE_ASR_UPDATE:
+ASR_eye.cpp:		r = pASRAnalyser->AsrUpdate(&pEvent->u_data.AsrUpdate);
+ASR_eye.cpp:		pEvent->eType = EVENT_TYPE_ASR_UPDATE;
+ASR_eye.cpp:		strcpy(pEvent->u_data.AsrUpdate.SessionId, SessionId);
+ASR_eye.cpp:		pEvent->u_data.AsrUpdate.ASRE2EDurationInMs = 200 + (random()%100);
+ASR_eye.cpp:	// update day rec
+ASR_eye.cpp:	// update week rec
+ASR_eye.cpp:	// update month rec
+ASR_eye.cpp:			sprintf(buf, "update into %s %s", "EpRegUsrTbl", buf1);
+ASR_eye.cpp:	// update day rec
+ASR_eye.cpp:	// update week rec
+ASR_eye.cpp:	// update month rec
+ASR_eye.cpp:			sprintf(buf, "update %s %s", TableName, buf1);
+ASR_eye.cpp:		perror("create the udp receive socket fail ,exit the model update thread");
+ASR_eye.cpp:		//WriteLog(DSN_LOG_ERROR,"create the udp receive socket fail ,exit the model update thread\n");
+ASR_eye.cpp:		printf("\nudp bind fail,exit the update model thread\n");
+ASR_eye.cpp:		//WriteLog(DSN_LOG_ERROR,"udp bind fail,exit the update model thread\n");
+ASR_eye.cpp:		//WriteLog(DSN_LOG_ERROR,"enter the model update thread \r\n");
+ASR_eye.cpp:			//cout<<"udp socket read error....exit the update model thread"<<udpsock<<endl;  
+ASR_eye.cpp:			//WriteLog(DSN_LOG_ERROR,"udp socket read error %d....,exit the update model thread \n",udpsock);
+ASR_eye.cpp:			printf("\nudp socket read error %d....,exit the update model thread ", gudpsock);
+ASR_eye.cpp:	// update day rec
+ASR_eye.cpp:	// update week rec
+ASR_eye.cpp:	// update month rec
+ASR_eye.cpp:	// update day rec
+ASR_eye.cpp:	// update week rec
+ASR_eye.cpp:	// update month rec
+ASR_eye.cpp:	// update day rec
+ASR_eye.cpp:	// update week rec
+ASR_eye.cpp:	// update month rec
+ASR_eye.cpp:	// update day rec
+ASR_eye.cpp:	// update week rec
+ASR_eye.cpp:	// update month rec
+ASR_eye.cpp:			sprintf(buf, "update %s %s", TableName, buf1);
+ASR_eye.cpp:int ASRAnalyser::AsrUpdate(struct S_ASR_UPDATE *AsrUpdate)
+ASR_eye.cpp:	if (AsrUpdate->SessionId[0] == 0)
+ASR_eye.cpp:		printf("\nAsrUpdate fail, SessionId is null.");
+ASR_eye.cpp:	//printf("\nAsrUpdate 1-------------------x.");
+ASR_eye.cpp:			AsrUpdate->ASRE2EDurationInMs,
+ASR_eye.cpp:			AsrUpdate->SessionId
+ASR_eye.cpp:			sprintf(buf, "update %s %s", TableName, buf1);
+ASR_eye.cpp:			sprintf(buf, "update %s %s", "AllUserASRActTbl", buf1);
+ASR_eye.cpp:			sprintf(buf, "update %s set %s = %d where %s = '%s'", TableName, FieldName, v, WhereFieldName, CmdStr);
+ASR_eye.cpp:int ASRAnalyser::UpdateInnerOneDayStat(int CurTimeSegId)
+ASR_eye.cpp:	//printf("\nUpdateInnerOneDayStat()---------------------RegUsrTbl rowcount:%d.", mSingleItemStat[ITEM_REG_USER_NUM]);
+ASR_eye.cpp:		//printf("\nAsrUpdate 1-------------------x.");
+ASR_eye.cpp:				sprintf(buf, "update %s %s", TableName, FiSet);
+ASR_eye.cpp:		UpdateInnerOneDayStat(mCurTimeSegId);
+ASR_eye.h:// UPDATE接口
+ASR_eye.h:typedef struct S_ASR_UPDATE
+ASR_eye.h:} ASR_UPDATE;
+ASR_eye.h:	struct S_ASR_UPDATE AsrUpdate;
+ASR_eye.h:	int UpdateInnerOneDayStat(int CurTimeSegId);
+ASR_eye.h:	int AsrUpdate(struct S_ASR_UPDATE *AsrUpdate);
+---- char * PeerPubIp = inet_ntoa Matches (2 in 1 files) ----
+ASR_eye.cpp:		char * PeerPubIp = inet_ntoa(too->sin_addr);
+ASR_eye.cpp:			char * PeerPubIp = inet_ntoa(from.sin_addr);
+---- timerta Matches (0 in 0 files) ----
+---- task Matches (0 in 0 files) ----
+---- task Matches (0 in 0 files) ----a

@@ -1,0 +1,21 @@
+一、mysql数据库：
+mysql -u root -p
+password: ddshlmstzczx
+数据库: epiano
+注册用户表：EpRegUsrTbl
+师生关系表：TSTbl
+师生课表：  TSLessionTbl
+
+二、eclipse工程
+ePiano
+我的课排：LessionFragment.java
+
+三、Web
+1、服务器通信和数据库操作：ASR_eye.cpp ASR_eye.h
+  编译命令：gcc ASR_eye.cpp -lmysqlclient -I/data/server/mysql-5.6.21/include -L/data/server/mysql-5.6.21/lib/ -lz -liconv
+2、一些PHP：./web/php
+  php文件要放在linux的/data/www/目录下才可被手机访问，举例：
+  曲表：http://121.42.153.237/SongLst.php
+  注册用户表：http://121.42.153.237/UsrLst.php
+  师生表：http://121.42.153.237/TSLst.php
+  师生课表：http://121.42.153.237/TSLessionLst.php
